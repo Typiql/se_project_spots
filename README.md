@@ -1,16 +1,22 @@
-# Triple Peaks Coffee Shop
+# Project Name
+Spots Project
 
-This is the second project of the Software Engineering program at TripleTen. It was created using HTML and CSS, based on the design brief.
+## Description
+This is a simple blog style of page allowing any user to upload simple 1-line titled images for public viewing.
 
-## Project features
+## Technologies and Techniques Used
+- **HTML**: For structuring the webpage.
+- **CSS**: For styling the webpage.
 
-- Semantic HTML5
-- Flexbox
-- Positioning
-- Flat BEM file structure
-- A custom form
-- CSS animation and transform
+## Project Features
+- Feature 1: There is a new post button that is not yet active but implemented and ready for further implementation.
+- Feature 2: The page is interactive and will update at 640px width, making it available for mobile users as well.
+- Feature 3: The profile title and descriptions will only continue to 3 lines and nothing past.
 
-## Plan on improving the project
+## Screenshots
+![Screenshot of feature 1](./images/Screenshot%201.png)
+![Screenshot of feature 2](./images/Screenshot%202.png)
 
-Add your ideas here :)
+## Deployed Project
+You can view the deployed project at: [GitHub Pages Link](https://typiql.github.io/se_project_spots/)
+
