@@ -14,7 +14,7 @@
 }
 
 /* Mobile View */
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 640px) {
   .cards {
     padding: 0 0 20px;
   }
