@@ -14,8 +14,8 @@ This is a simple blog style of page allowing any user to upload simple 1-line ti
 - Feature 3: The profile title and descriptions will only continue to 3 lines and nothing past.
 
 ## Screenshots
-![Screenshot of feature 1](./images/Screenshot%201.png)
-![Screenshot of feature 2](./images/Screenshot%202.png)
+![Screenshot of feature 1](./images/TopOfPage.png)
+![Screenshot of feature 2](./images/BottomOfPage.png)
 
 ## Deployed Project
 You can view the deployed project at: [GitHub Pages Link](https://typiql.github.io/se_project_spots/)
