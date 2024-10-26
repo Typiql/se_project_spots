@@ -13,10 +13,12 @@ This is a simple blog style of page allowing any user to upload simple 1-line ti
 - Feature 2: The page is interactive and will update at 640px width, making it available for mobile users as well.
 - Feature 3: The profile title and descriptions will only continue to 3 lines and nothing past.
 
+## Demo Video
+Watch a video demonstration of the project: [Demo Video Link](https://youtu.be/Mcnvit57k8s)
+
 ## Screenshots
 ![Screenshot of feature 1](./images/TopOfPage.png)
 ![Screenshot of feature 2](./images/BottomOfPage.png)
 
 ## Deployed Project
 You can view the deployed project at: [GitHub Pages Link](https://typiql.github.io/se_project_spots/)
-
