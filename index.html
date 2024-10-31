@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="./" />
     <link rel="stylesheet" href="./pages/index.css" />
-    <script src="./index.js" defer></script>
+    <script src="./scripts/index.js" defer></script>
     <title>Spots Project</title>
     <meta name="author" content="Alex Johnson" />
     <meta name="keywords" content="Spots Project Triple Ten" />
@@ -52,6 +52,7 @@
                 </div>
               </li>
             </template>
+          </ul>
         </section>
       </main>
       <footer class="footer">
@@ -62,7 +63,7 @@
           <button type="submit" class="modal__close-btn"></button>
           <h2 class="modal__title">Edit profile</h2>
           <form name="edit-profile" class="modal__form">
-            <label for="name" class="modal__label">
+            <label class="modal__label">
               Name
               <input
                 id="profile-name-input"
@@ -71,7 +72,7 @@
                 placeholder="Name"
               />
             </label>
-            <label for="description" class="modal__label">
+            <label class="modal__label">
               Description
               <input
                 id="profile-description-input"
@@ -80,7 +81,7 @@
                 placeholder="Description"
               />
             </label>
-            <button type="submit" class="edit-modal__submit-btn">Save</button>
+            <button type="submit" class="modal__submit-btn">Save</button>
           </form>
         </div>
       </div>

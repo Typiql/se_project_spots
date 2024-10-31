@@ -68,7 +68,7 @@ function editProfile (evt) {
   evt.preventDefault();
   profileName.textContent = editModalNameInput.value;
   profileDescription.textContent = editModalDescriptionInput.value;
-  editModal.classList.remove(`modal_opened`);
+  closeModal();
 }
 
 for (let i = 0; i < initialCards.length; i++) {
