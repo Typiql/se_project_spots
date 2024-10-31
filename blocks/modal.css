@@ -61,7 +61,7 @@
   font-family: "Poppins", Arial, sans-serif;
 }
 
-.modal__submit-btn {
+.edit-modal__submit-btn {
   width: 156px;
   padding: 18px 0;
   border-radius: 8px;
@@ -94,7 +94,7 @@
     margin-bottom: 24px;
   }
 
-  .modal__submit-btn {
+  .edit-modal__submit-btn {
     width: 100%;
   }
 }
