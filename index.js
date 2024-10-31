@@ -24,3 +24,15 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-karsten-winegeart-from-unsplash.jpg"
   }
 ];
+
+const modal = document.querySelector("#edit-modal");
+const settingsButton = document.querySelector(`.profile__settings`);
+const exitButton = document.querySelector('.modal__close-btn');
+
+settingsButton.addEventListener('click', function() {
+modal.classList.add('modal_opened');
+});
+
+exitButton.addEventListener('click', function() {
+modal.classList.remove('modal_opened');
+});
