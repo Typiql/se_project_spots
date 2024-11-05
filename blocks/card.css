@@ -1,5 +1,6 @@
 .card {
   width: 100%;
+  position: relative;
 }
 
 .card__image {
@@ -8,6 +9,27 @@
   width: 413px;
   object-fit: cover;
   display: block;
+}
+
+.card__delete-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  opacity: 30%;
+  width: 32px;
+  height: 32px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../images/deleteDefault.png");
+  border: none;
+  background-color: transparent;
+  transition: background-image 0.2s ease-in-out;
+}
+
+.card__delete-btn:hover {
+  opacity: 1;
+  background-image: url("../images/deleteHover.png");
 }
 
 .card__title-content {
@@ -44,8 +66,18 @@
   transition: opacity 0.2s ease;
 }
 
+.card__like-btn_liked {
+  transition: opacity 0.2s ease-in-out;
+  opacity: 1;
+  background-image: url(../images/Liked.png);
+}
+
 .card__like-btn:hover {
   opacity: 1;
+}
+
+.card__like-btn_liked:hover {
+  opacity: 0.7;
 }
 
 /* Mobile View */

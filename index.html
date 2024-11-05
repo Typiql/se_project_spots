@@ -45,6 +45,7 @@
           <ul class="cards__list">
             <template id="card-template">
               <li class="card">
+                <button class="card__delete-btn" src=""></button>
                 <img class="card__image" src="" alt="" />
                 <div class="card__title-content">
                   <h2 class="card__title"></h2>
@@ -60,9 +61,9 @@
       </footer>
       <div class="modal" id="edit-modal">
         <div class="modal__container">
-          <button type="submit" class="modal__close-btn"></button>
+          <button type="button" class="modal__close-btn" id="edit-modal-close-btn"></button>
           <h2 class="modal__title">Edit profile</h2>
-          <form name="edit-profile" class="modal__form">
+          <form name="edit-profile" class="modal__form" id="edit-modal-form">
             <label class="modal__label">
               Name
               <input
@@ -84,6 +85,39 @@
             <button type="submit" class="modal__submit-btn">Save</button>
           </form>
         </div>
+      </div>
+      <div class="modal" id="post-modal">
+        <div class="modal__container">
+          <button type="button" class="modal__close-btn" id="post-modal-close-btn"></button>
+          <h2 class="modal__title">New post</h2>
+          <form name="add-post" class="modal__form" id="post-modal-form">
+            <label class="modal__label">
+              Image link
+              <input
+                id="image-input"
+                type="url"
+                class="modal__input"
+                placeholder="Paste a link to the picture"
+              />
+            </label>
+            <label class="modal__label">
+              Caption
+              <input
+                id="caption-input"
+                type="text"
+                class="modal__input"
+                placeholder="Type your caption"
+              />
+            </label>
+            <button type="submit" class="modal__submit-btn">Save</button>
+          </form>
+        </div>
+    </div>
+    <div class="modal" id="view-image-modal">
+      <div class="modal__container modal__container_image">
+        <button type="button" class="modal__close-btn modal__close-btn_image" id="view-image-modal-close-btn"></button>
+        <img class="modal__image" src="" alt="">
+        <p class="modal__caption"></p>
       </div>
     </div>
   </body>

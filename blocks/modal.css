@@ -10,11 +10,18 @@
   right: 0;
   background-color: rgba(0, 0, 0, 0.5);
   visibility: hidden;
+  opacity: 0;
   padding: 0 20px;
+  transition: opacity 0.3s ease;
 }
 
 .modal_opened {
   visibility: visible;
+  opacity: 1;
+}
+
+.modal_closing {
+  opacity: 0;
 }
 
 .modal__container {
@@ -22,9 +29,22 @@
   background-color: white;
   padding: 32px 50px;
   max-width: 730px;
-  width: 100%;
   box-sizing: border-box;
   border-radius: 8px;
+  width: 100%;
+}
+
+.modal__image {
+  max-height: 80vh;
+  max-width: 80vw;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.modal__container_image {
+  background-color: transparent;
+  width: fit-content;
 }
 
 .modal__close-btn {
@@ -37,6 +57,19 @@
   border: none;
   background-color: white;
   cursor: pointer;
+  opacity: 70%;
+  transition: opacity 0.2s ease-in-out;
+  padding: 0;
+}
+
+.modal__close-btn_image {
+  background-image: url("../images/whiteCloseIcon.svg");
+  background-color: transparent;
+  right: -12.5px;
+}
+
+.modal__close-btn:hover {
+  opacity: 1;
 }
 
 .modal__title {
@@ -59,6 +92,16 @@
   border-radius: 8px;
   border: 1px solid black;
   font-family: "Poppins", Arial, sans-serif;
+  opacity: 40%;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.modal__label:hover {
+  opacity: 1;
+}
+
+.modal__input:not(:placeholder-shown) {
+  opacity: 1;
 }
 
 .modal__submit-btn {
@@ -69,6 +112,24 @@
   background-color: #212121;
   color: #FCF5E5;
   cursor: pointer;
+  opacity: 100%;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.modal__submit-btn:hover {
+  opacity: 70%;
+}
+
+.modal__caption {
+  color: white;
+  background-color: #212121;
+  border-radius: 8px;
+  width: fit-content;
+  padding: 4px 8px;
+  font-family: "Poppins", Arial, sans-serif;
+  margin: 8px 0 0;
+  font-size: 20px;
+  line-height: 1.2;
 }
 
 @media screen and (max-width: 640px) {
@@ -78,6 +139,10 @@
 
   .modal__container {
     padding: 12px;
+  }
+
+  .modal__container_image {
+    padding: 0px;
   }
 
   .modal__title {
@@ -96,5 +161,10 @@
 
   .modal__submit-btn {
     width: 100%;
+  }
+
+  .modal__close-btn_image {
+    top: -48px;
+    right: 0;
   }
 }
