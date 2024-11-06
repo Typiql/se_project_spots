@@ -30,6 +30,7 @@
               <img
                 class="profile__settings-icon"
                 src="./images/profile__settings-icon.svg"
+                alt="settings icon"
               />Edit Profile
             </button>
           </div>
@@ -46,7 +47,7 @@
             <template id="card-template">
               <li class="card">
                 <button class="card__delete-btn" src=""></button>
-                <img class="card__image" src="" alt="" />
+                <img class="card__image" src="#" alt="#" />
                 <div class="card__title-content">
                   <h2 class="card__title"></h2>
                   <button class="card__like-btn" type="button"></button>
@@ -61,7 +62,11 @@
       </footer>
       <div class="modal" id="edit-modal">
         <div class="modal__container">
-          <button type="button" class="modal__close-btn" id="edit-modal-close-btn"></button>
+          <button
+            type="button"
+            class="modal__close-btn"
+            id="edit-modal-close-btn"
+          ></button>
           <h2 class="modal__title">Edit profile</h2>
           <form name="edit-profile" class="modal__form" id="edit-modal-form">
             <label class="modal__label">
@@ -88,7 +93,11 @@
       </div>
       <div class="modal" id="post-modal">
         <div class="modal__container">
-          <button type="button" class="modal__close-btn" id="post-modal-close-btn"></button>
+          <button
+            type="button"
+            class="modal__close-btn"
+            id="post-modal-close-btn"
+          ></button>
           <h2 class="modal__title">New post</h2>
           <form name="add-post" class="modal__form" id="post-modal-form">
             <label class="modal__label">
@@ -112,12 +121,17 @@
             <button type="submit" class="modal__submit-btn">Save</button>
           </form>
         </div>
-    </div>
-    <div class="modal" id="view-image-modal">
-      <div class="modal__container modal__container_image">
-        <button type="button" class="modal__close-btn modal__close-btn_image" id="view-image-modal-close-btn"></button>
-        <img class="modal__image" src="" alt="">
-        <p class="modal__caption"></p>
+      </div>
+      <div class="modal" id="view-image-modal">
+        <div class="modal__container modal__container_image">
+          <button
+            type="button"
+            class="modal__close-btn modal__close-btn_image"
+            id="view-image-modal-close-btn"
+          ></button>
+          <img class="modal__image" src="#" alt="#" />
+          <p class="modal__caption"></p>
+        </div>
       </div>
     </div>
   </body>

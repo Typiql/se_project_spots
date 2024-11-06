@@ -12,16 +12,12 @@
   visibility: hidden;
   opacity: 0;
   padding: 0 20px;
-  transition: opacity 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .modal_opened {
   visibility: visible;
   opacity: 1;
-}
-
-.modal_closing {
-  opacity: 0;
 }
 
 .modal__container {
@@ -167,5 +163,9 @@
   .modal__close-btn_image {
     top: -48px;
     right: 0;
+  }
+
+  .modal__container_image {
+    width: 288px;
   }
 }

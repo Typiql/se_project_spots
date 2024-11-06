@@ -98,12 +98,8 @@ function openModal(modal) {
 }
 
 function closeModal(modal) {
-  modal.classList.add("modal_closing");
-  modal.addEventListener("transitionend", function handleTransitionEnd() {
-    modal.classList.remove("modal_opened", "modal_closing");
-    modal.removeEventListener("transitionend", handleTransitionEnd);
-  });
-}
+    modal.classList.remove("modal_opened");
+  };
 
 function editProfile(evt) {
   evt.preventDefault();
