@@ -162,6 +162,24 @@ function postCard(evt) {
   closeModal(postModal);
 }
 
+document.addEventListener("keydown", (evt) => {
+  if (evt.key === "Escape") {
+    const openModal = document.querySelector(".modal.modal_opened");
+    if (openModal) {
+      closeModal(openModal);
+    }
+  }
+});
+
+document.querySelectorAll(".modal").forEach((modal) => {
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      closeModal(modal);
+    }
+  });
+});
+
+
 // Initialize Cards
 initialCards.forEach((card) => {
   const cardElement = getCardElement(card);

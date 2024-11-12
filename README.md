@@ -9,7 +9,7 @@ This is a simple blog style of page allowing any user to upload simple 1-line ti
 - **CSS**: For styling the webpage.
 
 ## Project Features
-- Feature 1: There is a new post button that is not yet active but implemented and ready for further implementation.
+- Feature 1: The buttons on the page are active and now work compared to previous versions, using javascript.
 - Feature 2: The page is interactive and will update at 640px width, making it available for mobile users as well.
 - Feature 3: The profile title and descriptions will only continue to 3 lines and nothing past.
 

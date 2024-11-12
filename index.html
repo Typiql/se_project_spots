@@ -6,6 +6,7 @@
     <link rel="icon" href="./" />
     <link rel="stylesheet" href="./pages/index.css" />
     <script src="./scripts/index.js" defer></script>
+    <script src="./scripts/validation.js" defer></script>
     <title>Spots Project</title>
     <meta name="author" content="Alex Johnson" />
     <meta name="keywords" content="Spots Project Triple Ten" />
@@ -76,7 +77,11 @@
                 type="text"
                 class="modal__input"
                 placeholder="Name"
+                required
+                minlength="2"
+                maxlength="40"
               />
+              <span id="profile-name-input-error" class="modal__error"></span>
             </label>
             <label class="modal__label">
               Description
@@ -85,7 +90,11 @@
                 type="text"
                 class="modal__input"
                 placeholder="Description"
+                required
+                minlength="2"
+                maxlength="200"
               />
+              <span id="profile-description-input-error" class="modal__error"></span>
             </label>
             <button type="submit" class="modal__submit-btn">Save</button>
           </form>
@@ -108,6 +117,7 @@
                 class="modal__input"
                 placeholder="Paste a link to the picture"
               />
+              <span id="image-input-error" class="modal__error"></span>
             </label>
             <label class="modal__label">
               Caption
@@ -116,7 +126,10 @@
                 type="text"
                 class="modal__input"
                 placeholder="Type your caption"
+                minlength="2"
+                maxlength="30"
               />
+              <span id="caption-input-error" class="modal__error"></span>
             </label>
             <button type="submit" class="modal__submit-btn">Save</button>
           </form>
