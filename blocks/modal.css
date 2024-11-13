@@ -154,6 +154,8 @@
 
   .modal__container_image {
     padding: 0px;
+    width: 288px;
+    min-width: 288px;
   }
 
   .modal__title {
@@ -179,7 +181,4 @@
     right: 0;
   }
 
-  .modal__container_image {
-    width: 288px;
-  }
 }
