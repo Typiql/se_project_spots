@@ -139,7 +139,7 @@
   width: fit-content;
 }
 
-.modal__error {
+.modal__error_visible {
   color: #FF0000;
 }
 

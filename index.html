@@ -69,7 +69,7 @@
             id="edit-modal-close-btn"
           ></button>
           <h2 class="modal__title">Edit profile</h2>
-          <form name="edit-profile" class="modal__form" id="edit-modal-form">
+          <form name="edit-profile" class="modal__form" id="edit-modal-form" novalidate>
             <label class="modal__label">
               Name
               <input
@@ -81,7 +81,7 @@
                 minlength="2"
                 maxlength="40"
               />
-              <span id="profile-name-input-error" class="modal__error"></span>
+              <span id="profile-name-input-error" class="modal__error_visible"></span>
             </label>
             <label class="modal__label">
               Description
@@ -94,7 +94,7 @@
                 minlength="2"
                 maxlength="200"
               />
-              <span id="profile-description-input-error" class="modal__error"></span>
+              <span id="profile-description-input-error" class="modal__error_visible"></span>
             </label>
             <button type="submit" class="modal__submit-btn">Save</button>
           </form>
@@ -108,7 +108,7 @@
             id="post-modal-close-btn"
           ></button>
           <h2 class="modal__title">New post</h2>
-          <form name="add-post" class="modal__form" id="post-modal-form">
+          <form name="add-post" class="modal__form" id="post-modal-form" novalidate>
             <label class="modal__label">
               Image link
               <input
@@ -118,7 +118,7 @@
                 placeholder="Paste a link to the picture"
                 required
               />
-              <span id="image-input-error" class="modal__error"></span>
+              <span id="image-input-error" class="modal__error_visible"></span>
             </label>
             <label class="modal__label">
               Caption
@@ -131,7 +131,7 @@
                 maxlength="30"
                 required
               />
-              <span id="caption-input-error" class="modal__error"></span>
+              <span id="caption-input-error" class="modal__error_visible"></span>
             </label>
             <button type="submit" class="modal__submit-btn">Save</button>
           </form>
