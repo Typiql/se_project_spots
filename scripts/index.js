@@ -95,18 +95,18 @@ if (viewImageModalCloseButton) {
 // Functions
 function handleEscapeKey(evt) {
   if (evt.key === "Escape") {
-    closeModal(evt.currentTarget);
-  }
-}
+    closeModal(document.querySelector(".modal_opened"));
+  };
+};
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
-  modal.addEventListener("keydown", handleEscapeKey);
+  document.addEventListener("keydown", handleEscapeKey);
 };
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
-  modal.removeEventListener("keydown", handleEscapeKey);
+  document.removeEventListener("keydown", handleEscapeKey);
 };
 
 function editProfile(evt, settings) {
@@ -114,7 +114,7 @@ function editProfile(evt, settings) {
   profileName.textContent = editModalNameInput.value;
   profileDescription.textContent = editModalDescriptionInput.value;
   closeModal(editModal);
-}
+};
 
 function getCardElement(data) {
   const cardElement = cardTemplate.content.querySelector(".card").cloneNode(true);
@@ -158,14 +158,7 @@ function postCard(evt, settings) {
   closeModal(postModal);
 }
 
-document.addEventListener("keydown", (evt) => {
-  if (evt.key === "Escape") {
-    const openModal = document.querySelector(".modal.modal_opened");
-    if (openModal) {
-      closeModal(openModal);
-    }
-  }
-});
+// Sorry whoever is reviewing this, I forgot to delete that. I replaced it with the function handleEscapeKey so it wasn't anonymous anymore.
 
 document.querySelectorAll(".modal").forEach((modal) => {
   modal.addEventListener("click", (event) => {
