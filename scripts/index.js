@@ -158,7 +158,7 @@ function postCard(evt, settings) {
   closeModal(postModal);
 }
 
-// Sorry whoever is reviewing this, I forgot to delete that. I replaced it with the function handleEscapeKey so it wasn't anonymous anymore.
+// Oops, I forgot to delete that. Sorry code reviewer.
 
 document.querySelectorAll(".modal").forEach((modal) => {
   modal.addEventListener("click", (event) => {
