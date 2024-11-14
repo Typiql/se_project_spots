@@ -24,21 +24,18 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-karsten-winegeart-from-unsplash.jpg",
   },
 ];
-// Profile Elements
 
+// Profile Elements
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
 
 // Modal Input Elements
-
 const editModalNameInput = document.querySelector("#profile-name-input");
 const editModalDescriptionInput = document.querySelector("#profile-description-input");
 const postModalLinkInput = document.querySelector("#image-input");
 const postModalNameInput = document.querySelector("#caption-input");
 
 // Form and Modal Elements
-
-const modal = document.querySelector(".modal");
 const editFormElement = document.querySelector("#edit-modal-form");
 const postFormElement = document.querySelector("#post-modal-form");
 const editModal = document.querySelector("#edit-modal");
@@ -48,7 +45,6 @@ const modalImage = viewImageModal?.querySelector(".modal__image");
 const modalCaption = viewImageModal?.querySelector(".modal__caption");
 
 // Button Elements
-
 const postButton = document.querySelector(".profile__post-btn");
 const settingsButton = document.querySelector(".profile__settings");
 const editModalExitButton = document.querySelector("#edit-modal-close-btn");
@@ -57,28 +53,25 @@ const viewImageModalCloseButton = document.querySelector("#view-image-modal-clos
 const postSubmitBtn = postModal.querySelector(".modal__submit-btn");
 
 // Card Template and List Elements
-
 const cardTemplate = document.querySelector("#card-template");
 const cardList = document.querySelector(".cards__list");
 
 // Event Listeners
-
 if (settingsButton) {
   settingsButton.addEventListener("click", () => {
     editModalNameInput.value = profileName.textContent;
     editModalDescriptionInput.value = profileDescription.textContent;
-    resetValidation(editFormElement, [editModalNameInput, editModalDescriptionInput]);
+    resetValidation(editFormElement, [editModalNameInput, editModalDescriptionInput], settings);
     openModal(editModal);
   });
 }
 if (editModalExitButton) {
-
   editModalExitButton.addEventListener("click", () => {
     closeModal(editModal);
   });
 }
 if (editFormElement) {
-  editFormElement.addEventListener("submit", editProfile);
+  editFormElement.addEventListener("submit", (evt) => editProfile(evt, settings));
 }
 if (postButton) {
   postButton.addEventListener("click", () => {
@@ -91,30 +84,36 @@ if (postModalExitButton) {
   });
 }
 if (postFormElement) {
-  postFormElement.addEventListener("submit", (evt) => {
-    postCard(evt);
-  });
+  postFormElement.addEventListener("submit", (evt) => postCard(evt, settings));
 }
 if (viewImageModalCloseButton) {
   viewImageModalCloseButton.addEventListener("click", () => {
     closeModal(viewImageModal);
   });
 }
+
 // Functions
+function handleEscapeKey(evt) {
+  if (evt.key === "Escape") {
+    closeModal(evt.currentTarget);
+  }
+}
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
-}
-function closeModal(modal) {
-    modal.classList.remove("modal_opened");
-  };
+  modal.addEventListener("keydown", handleEscapeKey);
+};
 
-function editProfile(evt) {
+function closeModal(modal) {
+  modal.classList.remove("modal_opened");
+  modal.removeEventListener("keydown", handleEscapeKey);
+};
+
+function editProfile(evt, settings) {
   evt.preventDefault();
   profileName.textContent = editModalNameInput.value;
   profileDescription.textContent = editModalDescriptionInput.value;
   closeModal(editModal);
-
 }
 
 function getCardElement(data) {
@@ -146,13 +145,7 @@ function getCardElement(data) {
   return cardElement;
 }
 
-viewImageModal?.addEventListener("click", (evt) => {
-  if (evt.target.classList.contains("modal_opened")) {
-    closeModal(viewImageModal);
-  }
-});
-
-function postCard(evt) {
+function postCard(evt, settings) {
   evt.preventDefault();
   const newCardData = {
     name: postModalNameInput.value,
@@ -161,7 +154,7 @@ function postCard(evt) {
   const cardElement = getCardElement(newCardData);
   cardList.prepend(cardElement);
   evt.target.reset();
-  disableButton(postSubmitBtn);
+  disableButton(postSubmitBtn, settings);
   closeModal(postModal);
 }
 
@@ -176,7 +169,6 @@ document.addEventListener("keydown", (evt) => {
 
 document.querySelectorAll(".modal").forEach((modal) => {
   modal.addEventListener("click", (event) => {
-
     if (event.target === modal) {
       closeModal(modal);
     }
@@ -185,6 +177,5 @@ document.querySelectorAll(".modal").forEach((modal) => {
 
 initialCards.forEach((card) => {
   const cardElement = getCardElement(card);
-
   cardList.prepend(cardElement);
 });
