@@ -119,6 +119,7 @@
   color: #FCF5E5;
   cursor: pointer;
   opacity: 100%;
+  font-family: "Poppins", Arial, sans-serif;
   transition: opacity 0.2s ease-in-out;
 }
 

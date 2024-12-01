@@ -67,22 +67,12 @@ const api = new Api({
   },
 });
 
-api
-  .getAppInfo()
-  .then(([cards]) => {
+api.getAppInfo()
+  .then(([cards, userInfo]) => {
     cards.forEach((item) => {
       const cardElement = getCardElement(item);
       cardList.prepend(cardElement);
     });
-  })
-  .catch((error) => {
-    console.error(error);
-  });
-
-api
-  .getUserInfo()
-  .then((userInfo) => {
-    const profileElement = userInfo;
     profileName.textContent = userInfo.name;
     profileDescription.textContent = userInfo.about;
     profileAvatar.src = userInfo.avatar;
@@ -136,6 +126,7 @@ const deleteImageCancelButton = document.querySelector("#cancel-delete-btn");
 const editProfileSubmitButton = document.querySelector(
   "#edit-profile-submit-btn"
 );
+const editAvatarSubmitButton = document.querySelector("#edit-avatar-submit-btn");
 
 // Card Template and List Elements
 const cardTemplate = document.querySelector("#card-template");
@@ -243,6 +234,9 @@ function editProfile(evt) {
 
 function editAvatar(evt) {
   evt.preventDefault();
+
+  editAvatarSubmitButton.textContent = "Saving...";
+
   api
     .editUserAvatar({
       avatar: editAvatarInput.value,
@@ -250,9 +244,13 @@ function editAvatar(evt) {
     .then((data) => {
       avatarImg.src = data.avatar;
       editAvatarInput.value = "";
+      disableButton(editAvatarSubmitButton, settings);
       closeModal(editAvatarModal);
     })
-    .catch(console.error);
+    .catch(console.error)
+    .finally(() => {
+      editAvatarSubmitButton.textContent = "Save";
+    });
 }
 
 function getCardElement(data) {
@@ -311,7 +309,6 @@ function getCardElement(data) {
     openModal(deleteImageModal);
 
     deleteImageDeleteButton.onclick = () => {
-      // Change the button text to "Deleting..."
       deleteImageDeleteButton.textContent = "Deleting...";
 
       api
@@ -324,18 +321,17 @@ function getCardElement(data) {
           console.error(error);
         })
         .finally(() => {
-          // Change the button text back to "Delete"
           deleteImageDeleteButton.textContent = "Delete";
         });
-    };
-
-    deleteImageCancelButton.onclick = () => {
-      closeModal(deleteImageModal);
     };
   });
 
   return cardElement;
 }
+
+deleteImageCancelButton.onclick = () => {
+  closeModal(deleteImageModal);
+};
 
 function postCard(evt, settings) {
   evt.preventDefault();
@@ -351,7 +347,7 @@ function postCard(evt, settings) {
     .uploadCard(newCardData)
     .then((data) => {
       const cardElement = getCardElement(data);
-      cardList.append(cardElement);
+      cardList.prepend(cardElement);
       evt.target.reset();
       disableButton(postSubmitBtn, settings);
       closeModal(postModal);
