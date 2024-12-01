@@ -74,6 +74,11 @@
   font-family: "Poppins", Arial, sans-serif;
 }
 
+.modal__title_centered {
+  display: flex;
+  justify-content: center;
+}
+
 .modal__label {
   display: flex;
   flex-direction: column;
@@ -141,6 +146,46 @@
 
 .modal__error_visible {
   color: #FF0000;
+}
+
+.delete-img-btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.delete-img-btn {
+  width: 156px;
+  height: 52px;
+  color: #212121;
+  background: none;
+  border-radius: 8px;
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 16px;
+  border: 1px solid #212121;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.delete-img-btn:hover {
+  background-color: #212121;
+  color: #FFFFFF;
+}
+
+.delete-img-btn_delete {
+  border: none;
+  background-color: #FF6565;
+}
+
+.delete-img-btn_delete:hover {
+  background-color: #FF3333;
+}
+
+.modal__close-btn-delete-img {
+  background-image: url("../images/whiteCloseIcon.svg");
+  background-color: transparent;
+  right: -52px;
+  top: 0px;
 }
 
 @media screen and (max-width: 640px) {
