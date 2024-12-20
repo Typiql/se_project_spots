@@ -7,6 +7,7 @@ This is a simple blog style of page allowing any user to upload simple 1-line ti
 ## Technologies and Techniques Used
 - **HTML**: For structuring the webpage.
 - **CSS**: For styling the webpage.
+- **Javascript**: For making the page functional.
 
 ## Project Features
 - Feature 1: The buttons on the page are active and now work compared to previous versions, using javascript.
